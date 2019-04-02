@@ -63,3 +63,7 @@ typings/
 # vscode config files
 
 .vscode
+
+# webpack output
+
+public/js
