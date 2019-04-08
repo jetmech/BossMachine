@@ -3,7 +3,7 @@ const request = require('supertest');
 
 const app = require('../server');
 
-describe.skip('/api/minions routes', function() {
+describe('/api/minions routes', function() {
   let fakeDb = require('../server/db.js');
 
   describe('GET /api/minions', function() {
