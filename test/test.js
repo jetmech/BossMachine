@@ -477,7 +477,7 @@ describe('/api/ideas routes', function() {
 
 });
 
-describe.skip('checkMillionDollarIdea middleware', function() {
+describe('checkMillionDollarIdea middleware', function() {
 
   const checkMillionDollarIdea = require('../server/checkMillionDollarIdea');
 
