@@ -686,7 +686,7 @@ describe('/api/meetings routes', function() {
 
 });
 
-describe.skip('BONUS: /api/minions/:minionId/work routes', function() {
+describe('BONUS: /api/minions/:minionId/work routes', function() {
 
   let fakeDb = require('../server/db.js').db;
   
@@ -840,7 +840,7 @@ describe.skip('BONUS: /api/minions/:minionId/work routes', function() {
   
   });
   
-  describe('POST /api/minions/:minionId/work', function() {
+  describe.skip('POST /api/minions/:minionId/work', function() {
   
     it('should add a new idea if all supplied information is correct', function() {
       let initialWorkArray;
