@@ -1,4 +1,5 @@
 const ideasRouter = require('express').Router();
+const checkMillionDollarIdea = require('../checkMillionDollarIdea');
 const db = require('../db');
 
 ideasRouter.param('ideaId', (req, res, next, id) => {
@@ -31,9 +32,9 @@ ideasRouter.put('/:ideaId', (req, res, next) => {
   res.send(newIdea);
 });
 
-ideasRouter.post('/', (req, res, next) => {
+ideasRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
   let idea = req.body;
-  if(validIdea(idea)) {
+  if (validIdea(idea)) {
     let newIdea = db.addToDatabase('ideas', idea);
     res.status(201).send(newIdea);
   } else {
@@ -42,7 +43,7 @@ ideasRouter.post('/', (req, res, next) => {
 });
 
 ideasRouter.delete('/:ideaId', (req, res, next) => {
-  if(db.deleteFromDatabasebyId('ideas', req.idea.id)) {
+  if (db.deleteFromDatabasebyId('ideas', req.idea.id)) {
     res.status(204).send();
   } else {
     res.status(404).send();
